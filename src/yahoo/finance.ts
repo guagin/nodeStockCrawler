@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
+import cheerio from 'cheerio'
 
-// https://tw.news.yahoo.com/
 export const makeFetchNews: (depends: {}) => () => Promise<string> = () => {
   let cache = ''
 
@@ -9,7 +9,7 @@ export const makeFetchNews: (depends: {}) => () => Promise<string> = () => {
       return cache
     }
 
-    const response = await fetch('https://tw.news.yahoo.com')
+    const response = await fetch('https://tw.news.yahoo.com/finance')
 
     const text = await response.text()
 

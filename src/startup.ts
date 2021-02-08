@@ -10,9 +10,10 @@ server.get('/', (req, res) => {
   res.send({ hello: 'world' })
 })
 
-server.get('/hello', async (request, reply) => {
+const fetchNews = makeFetchNews({})
+
+server.get('/yahooNews', async (request, reply) => {
   reply.type('application/json').code(200)
-  const fetchNews = makeFetchNews({})
   return fetchNews()
 })
 

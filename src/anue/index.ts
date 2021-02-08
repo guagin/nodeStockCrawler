@@ -1,6 +1,8 @@
 import fetch from 'node-fetch'
+import cheerio from 'cheerio'
 
-// https://tw.news.yahoo.com/
+// https://api.cnyes.com/media/api/v1/newslist/category/headline?limit=30&startAt=1611849600&endAt=1612799999&page=1
+
 export const makeFetchNews: (depends: {}) => () => Promise<string> = () => {
   let cache = ''
 
@@ -9,7 +11,7 @@ export const makeFetchNews: (depends: {}) => () => Promise<string> = () => {
       return cache
     }
 
-    const response = await fetch('https://tw.news.yahoo.com')
+    const response = await fetch('https://tw.news.yahoo.com/finance')
 
     const text = await response.text()
 

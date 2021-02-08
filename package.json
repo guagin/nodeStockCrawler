@@ -51,6 +51,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-run": "^1.1.0",
     "rollup-plugin-typescript2": "^0.24.3",
+    "source-map-support": "^0.5.19",
     "ts-jest": "^26.1.0",
     "ts-lint": "^4.5.1",
     "tslint": "^6.1.2"
