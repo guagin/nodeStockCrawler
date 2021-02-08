@@ -2,7 +2,7 @@ import 'regenerator-runtime/runtime'
 
 import fastify from 'fastify'
 
-import { makeFetchNews } from 'yahoo'
+import { makeFetchAnueNews } from 'anue'
 
 const server = fastify({ logger: true })
 
@@ -10,11 +10,11 @@ server.get('/', (req, res) => {
   res.send({ hello: 'world' })
 })
 
-const fetchNews = makeFetchNews({})
+const fetchAnueNews = makeFetchAnueNews({})
 
-server.get('/yahooNews', async (request, reply) => {
+server.get('/anue', async (request, reply) => {
   reply.type('application/json').code(200)
-  return fetchNews()
+  return fetchAnueNews()
 })
 
 server.listen(3000, (err, address) => {
