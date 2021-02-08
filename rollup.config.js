@@ -38,32 +38,22 @@ export default {
       sourcemap: true,
     }),
 
-    // Allows node_modules resolution
     nodeResolve({ extensions }),
 
     json({ compact: true }),
 
     autoExternal({ dependencies: true, peerDependencies: true }),
 
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs({
       transformMixedEsModules: true,
-      // namedExports: {
-      //   'node_modules/graphql-tools/dist/index.js': [
-      //     'addMockFunctionsToSchema',
-      //     'makeExecutableSchema',
-      //   ],
-      // },
     }),
 
     typescript({
       objectHashIgnoreUnknownHack: true,
     }),
 
-    // Compile TypeScript/JavaScript files
     babel({
       exclude: "node_modules/**",
-      // include: ['src/**/*'],
       runtimeHelpers: true,
       extensions,
     }),
