@@ -1,0 +1,7 @@
+'*.{js,ts}':
+  - 'eslint --fix'
+  - 'prettier --write'
+  - 'git add'
+'*.{graphql,json,yml}':
+  - 'prettier --write'
+  - 'git add'
